@@ -11,6 +11,7 @@ This includes:
 - [LlamaParse](./parse.md) - A GenAI-native document parser that can parse complex document data for any downstream LLM use case (Agents, RAG, data processing, etc.).
 - [LlamaExtract](./extract.md) - A prebuilt agentic data extractor that can be used to transform data into a structured JSON representation.
 - [LlamaCloud Index](./index.md) - A widely customizable and fully automated document ingestion pipeline that also serves retrieval purposes.
+- [OpenCog Autonomous Agents](./opencog.md) - OpenCog-inspired cognitive architecture for building autonomous, goal-directed agents with reasoning capabilities.
 
 ## Getting Started
 
@@ -29,6 +30,7 @@ from llama_cloud_services import (
     LlamaParse,
     LlamaExtract,
     LlamaCloudIndex,
+    CognitiveAgent,
 )
 
 parser = LlamaParse(api_key="YOUR_API_KEY")
@@ -36,6 +38,11 @@ extract = LlamaExtract(api_key="YOUR_API_KEY")
 index = LlamaCloudIndex(
     "my_first_index", project_name="default", api_key="YOUR_API_KEY"
 )
+
+# Create an autonomous cognitive agent
+agent = CognitiveAgent(name="assistant")
+agent.add_goal("help users", priority=0.9)
+result = agent.cognitive_cycle([{"concept": "user needs help", "strength": 0.9}])
 ```
 
 See the quickstart guides for each service for more information:
@@ -43,6 +50,7 @@ See the quickstart guides for each service for more information:
 - [LlamaParse](./parse.md)
 - [LlamaExtract](./extract.md)
 - [LlamaCloud Index](./index.md)
+- [OpenCog Autonomous Agents](./opencog.md)
 
 ## Switch to EU SaaS 🇪🇺
 
