@@ -6,6 +6,15 @@ from llama_cloud_services.index import (
     LlamaCloudIndex,
     LlamaCloudRetriever,
 )
+from llama_cloud_services.opencog import (
+    CognitiveAgent,
+    AtomSpace,
+    Atom,
+    AtomType,
+    PerceptionProcess,
+    ReasoningProcess,
+    ActionProcess,
+)
 
 __all__ = [
     "LlamaParse",
@@ -16,4 +25,11 @@ __all__ = [
     "LlamaCloudIndex",
     "LlamaCloudRetriever",
     "LlamaCloudCompositeRetriever",
+    "CognitiveAgent",
+    "AtomSpace",
+    "Atom",
+    "AtomType",
+    "PerceptionProcess",
+    "ReasoningProcess",
+    "ActionProcess",
 ]
