@@ -25,6 +25,8 @@ Then, get your API key from [LlamaCloud](https://cloud.llamaindex.ai/).
 
 Then, you can use the services in your code:
 
+**Python:**
+
 ```python
 from llama_cloud_services import (
     LlamaParse,
@@ -43,6 +45,17 @@ index = LlamaCloudIndex(
 agent = CognitiveAgent(name="assistant")
 agent.add_goal("help users", priority=0.9)
 result = agent.cognitive_cycle([{"concept": "user needs help", "strength": 0.9}])
+```
+
+**TypeScript:**
+
+```typescript
+import { CognitiveAgent } from "llama-cloud-services";
+
+// Create an autonomous cognitive agent
+const agent = new CognitiveAgent("assistant");
+agent.addGoal("help users", 0.9);
+const result = agent.cognitiveCycle([{ concept: "user needs help", strength: 0.9 }]);
 ```
 
 See the quickstart guides for each service for more information:
