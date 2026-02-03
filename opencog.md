@@ -476,7 +476,6 @@ high_conf_atoms = [
 - [LlamaCloud Services Documentation](https://docs.cloud.llamaindex.ai)
 - **Python Examples**: [examples/opencog_agent_example.py](./examples/opencog_agent_example.py)
 - **TypeScript Examples**: [examples-ts/opencog-agent-example.ts](./examples-ts/opencog-agent-example.ts)
-- **TypeScript Examples**: [examples-ts/opencog-agent-example.ts](./examples-ts/opencog-agent-example.ts)
 
 ## Contributing
 
