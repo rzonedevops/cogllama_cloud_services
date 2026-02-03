@@ -44,7 +44,11 @@ export class CognitiveAgent {
   name: string;
   atomspace: AtomSpace;
   processes: CognitiveProcess[];
+  
+  /** Optional LlamaCloud deployment name for data persistence */
   deploymentName?: string;
+  
+  /** Collection name for storing agent data in LlamaCloud */
   collection: string;
 
   constructor(

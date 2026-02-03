@@ -30,6 +30,7 @@ describe("OpenCog AtomSpace Tests", () => {
 
   describe("Atom Operations", () => {
     it("should add a concept atom", () => {
+      // Note: Atom names can contain spaces as they represent natural language concepts
       const atom = atomspace.addAtom(AtomType.CONCEPT, "test concept");
       
       expect(atom.type).toBe(AtomType.CONCEPT);
