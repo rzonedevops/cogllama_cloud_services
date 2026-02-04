@@ -10,3 +10,5 @@ node_modules/
 .turbo/
 dist/
 .npmrc
+examples-ts/**/*.js
+examples-ts/**/*.js.map

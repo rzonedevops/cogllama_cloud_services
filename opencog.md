@@ -45,6 +45,8 @@ Knowledge is represented with probabilistic truth values consisting of:
 
 ## Quick Start
 
+### Python
+
 ```python
 from llama_cloud_services import CognitiveAgent
 
@@ -71,9 +73,39 @@ result = agent.cognitive_cycle(observations)
 print(result)
 ```
 
+### TypeScript
+
+```typescript
+import { CognitiveAgent } from "llama-cloud-services";
+
+// Create an autonomous agent
+const agent = new CognitiveAgent("my_agent");
+
+// Define goals
+agent.addGoal("help user", 0.9);
+agent.addGoal("learn continuously", 0.7);
+
+// Register available actions
+agent.addAction("search knowledge base", 0.8);
+agent.addAction("generate response", 0.7);
+
+// Process observations
+const observations = [
+  { concept: "user needs help", strength: 0.9, confidence: 0.9 },
+  { concept: "information available", strength: 0.8, confidence: 0.8 },
+];
+agent.perceive(observations);
+
+// Run cognitive cycle (perceive -> reason -> act)
+const result = agent.cognitiveCycle(observations);
+console.log(result);
+```
+
 ## AtomSpace Knowledge Graph
 
 The AtomSpace provides a flexible knowledge representation system:
+
+### Python
 
 ```python
 from llama_cloud_services import AtomSpace, AtomType, TruthValue
@@ -109,6 +141,44 @@ beliefs = atomspace.find_atoms(
 
 # Get related atoms
 related = atomspace.get_related_atoms(belief.id)
+```
+
+### TypeScript
+
+```typescript
+import { AtomSpace, AtomType } from "llama-cloud-services";
+
+// Create knowledge graph
+const atomspace = new AtomSpace("my_knowledge");
+
+// Add atoms
+const belief = atomspace.addBelief(
+  "Python is useful",
+  0.9,
+  0.8
+);
+
+const goal = atomspace.addGoal(
+  "learn Python",
+  0.85
+);
+
+const action = atomspace.addAction(
+  "study tutorial",
+  0.7
+);
+
+// Link atoms (create relationships)
+atomspace.linkAtoms(action.id, goal.id);
+
+// Query knowledge
+const beliefs = atomspace.findAtoms({
+  atomType: AtomType.BELIEF,
+  minStrength: 0.7
+});
+
+// Get related atoms
+const related = atomspace.getRelatedAtoms(belief.id);
 ```
 
 ### Atom Types
@@ -404,7 +474,8 @@ high_conf_atoms = [
 
 - [OpenCog Framework Documentation](https://wiki.opencog.org)
 - [LlamaCloud Services Documentation](https://docs.cloud.llamaindex.ai)
-- [Examples Directory](./examples/opencog_agent_example.py)
+- **Python Examples**: [examples/opencog_agent_example.py](./examples/opencog_agent_example.py)
+- **TypeScript Examples**: [examples-ts/opencog-agent-example.ts](./examples-ts/opencog-agent-example.ts)
 
 ## Contributing
 
